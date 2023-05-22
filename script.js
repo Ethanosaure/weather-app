@@ -13,7 +13,7 @@ lon.setAttribute("id", "lon");
 // temperature
 const temp = document.createElement("div");
 temp.setAttribute("id", "temp");
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 40; i += 8) {
   const temperature = document.createElement("span");
   temperature.setAttribute("id", `temperature${i}`);
   temp.appendChild(temperature);

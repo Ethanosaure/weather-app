@@ -16,7 +16,7 @@ export async function fetch_weather() {
     .catch((error) => {
       throw new Error(error);
     });
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 40; i += 8) {
     const temperature = document.querySelector(`#temperature${i}`);
     temperature.textContent = weather.list[i].main.temp;
     temp.appendChild(temperature);
