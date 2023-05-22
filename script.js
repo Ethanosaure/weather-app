@@ -1,4 +1,4 @@
-import { fetch_api } from "./js/fetch-API.js";
+import { fetch_weather } from "./js/fetch-temp.js";
 const btn = document.querySelector(".weather_btn");
 const div = document.querySelector(".weather_div");
 
@@ -11,8 +11,13 @@ const lon = document.createElement("span");
 lon.setAttribute("id", "lon");
 
 // temperature
-const temperature = document.createElement("span");
-temperature.setAttribute("id", "temp");
+const temp = document.createElement("div");
+temp.setAttribute("id", "temp");
+for (let i = 0; i < 5; i++) {
+  const temperature = document.createElement("span");
+  temperature.setAttribute("id", `temperature${i}`);
+  temp.appendChild(temperature);
+}
 
 // humidity
 const humidity = document.createElement("span");
@@ -24,10 +29,10 @@ country_photo.setAttribute("id", "country_photo");
 
 // append everything
 div.appendChild(country_photo);
-div.appendChild(temperature);
+div.appendChild(temp);
 div.appendChild(lat);
 div.appendChild(lon);
 div.appendChild(humidity);
 
 // button that calls the function
-btn.addEventListener("click", async () => await fetch_api());
+btn.addEventListener("click", async () => await fetch_weather());
