@@ -18,7 +18,6 @@ export function autocomplete() {
       const suggestions = document.createElement("select");
       suggestions.setAttribute("id", "select");
       div.appendChild(suggestions);
-      console.log(data);
       data.forEach((element) => {
         let suggestion = document.createElement("option");
         suggestion.textContent = `${element.name},${element.country} `;

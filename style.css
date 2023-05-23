@@ -52,4 +52,10 @@ span {
 .clouds,
 .description {
   margin-right: 10px;
+}
+
+.city {
+  align-self: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
 }/*# sourceMappingURL=style.css.map */

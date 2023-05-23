@@ -2,9 +2,12 @@ import { fetch_photo } from "./fetch-photo.js";
 import { fetch_lat_lon } from "./fetch-lat-lon.js";
 export async function fetch_weather() {
   await fetch_lat_lon();
+
   const lat = document.querySelector("#lat").value;
   const lon = document.querySelector("#lon").value;
   const temp = document.querySelector("#temp");
+  const input = document.querySelector(".weather_input");
+
   const days = [
     "today: ",
     "tomorrow: ",
@@ -36,11 +39,8 @@ export async function fetch_weather() {
     description.textContent = `description: ${weather.list[i].weather[0].description} `;
     const div = document.querySelector(`#div${i}`);
 
-    console.log(weather.list[0].weather[0].main);
-
     if (weather.list[0].weather[0].main === "Clouds") {
       document.body.style.backgroundImage = `url(assets/nuages-139.jpg)`;
-      console.log(weather.list[0].weather[0].main);
     }
     if (weather.list[0].weather[0].main === "Rain") {
       document.body.style.backgroundImage = `url(assets/cloud-rain-raining-sad-wallpaper-preview.jpg)`;
@@ -60,4 +60,6 @@ export async function fetch_weather() {
   }
 
   fetch_photo();
+  const city = document.querySelector(".city");
+  city.innerHTML = input.value;
 }

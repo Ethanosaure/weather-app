@@ -48,10 +48,13 @@ for (let i = 0; i < 40; i += 8) {
   content_div.appendChild(description);
   temp.appendChild(content_div);
 }
-
 // photos
 const country_photo = document.createElement("img");
 country_photo.setAttribute("id", "country_photo");
+
+let city = document.createElement("span");
+city.setAttribute("class", "city");
+temp.appendChild(city);
 
 // append everything
 div.appendChild(country_photo);
@@ -66,6 +69,7 @@ input.addEventListener("keypress", async function (event) {
   if (event.keyCode == 13) {
     await fetch_weather();
     background();
+    city.innerText = input.value;
   }
 });
 input.addEventListener("input", () => autocomplete());
