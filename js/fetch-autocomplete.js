@@ -1,25 +1,30 @@
 export function autocomplete() {
-  let input = document.querySelector(".weather_input").value;
+  let input = document.querySelector(".weather_input");
   const div = document.querySelector(".autocomplete");
+  if (input.value == "") {
+    return;
+  }
   let options = {
     method: "GET",
     headers: { "x-api-key": "K2HD9WqSrlqaFu59wE5zvg==CvClWygwWZIPAxvb" },
   };
 
-  let url = `https://api.api-ninjas.com/v1/city?limit=10&name=${input}`;
+  let url = `https://api.api-ninjas.com/v1/city?limit=10&name=${input.value}`;
 
   fetch(url, options)
-    .then((res) => res.json()) // parse response as JSON
+    .then((res) => res.json())
     .then((data) => {
       div.innerHTML = "";
+      const suggestions = document.createElement("select");
+      div.appendChild(suggestions);
       console.log(data);
       data.forEach((element) => {
-        const suggestions = document.createElement("span");
-        suggestions.textContent = `${element.name},${element.country} `;
-        suggestions.addEventListener("click", () => {
-          input = element.name;
+        let suggestion = document.createElement("option");
+        suggestion.textContent = `${element.name},${element.country} `;
+        suggestion.addEventListener("click", function () {
+          input.value = `${element.name}`;
         });
-        div.appendChild(suggestions);
+        suggestions.appendChild(suggestion);
       });
     })
     .catch((err) => {
