@@ -34,13 +34,16 @@ export async function fetch_weather() {
     humidity.textContent = `humidity: ${weather.list[i].main.humidity}% `;
     const description = document.querySelector(`#description${i}`);
     description.textContent = `description: ${weather.list[i].weather[0].description} `;
+    const div = document.querySelector(`#div${i}`);
 
     // append
-    temp.appendChild(day);
-    temp.appendChild(humidity);
-    temp.appendChild(temperature);
-    temp.appendChild(clouds);
-    temp.appendChild(description);
+    div.appendChild(day);
+    div.appendChild(humidity);
+    div.appendChild(temperature);
+    div.appendChild(clouds);
+    div.appendChild(description);
+    temp.appendChild(div);
+
     y += 9;
   }
 

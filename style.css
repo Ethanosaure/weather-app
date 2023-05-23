@@ -1,1 +1,49 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.autocomplete {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#country_photo {
+  height: 375px;
+  width: 375px;
+  border-radius: 50%;
+}
+
+.weather_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+span {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+}
+
+#temp {
+  display: flex;
+  flex-direction: column;
+}
+
+.content_div {
+  margin: 10px;
+}
+
+.day,
+.temperature,
+.humidity,
+.clouds,
+.description {
+  margin-right: 10px;
+}/*# sourceMappingURL=style.css.map */
