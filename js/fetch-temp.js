@@ -48,7 +48,9 @@ export async function fetch_weather() {
     if (weather.list[0].weather[0].main === "Clear") {
       document.body.style.backgroundImage = "url(assets/soleil.jpg)";
     }
-    document.body.style.backgroundImage = "url(assets/venteux.jpg)";
+    if (weather.list[0].weather[0].main === "") {
+      document.body.style.backgroundImage = "url(assets/venteux.jpg)";
+    }
     // append
     div.appendChild(day);
     div.appendChild(humidity);
