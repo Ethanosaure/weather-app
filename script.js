@@ -1,6 +1,8 @@
 import { fetch_weather } from "./js/fetch-temp.js";
+import { autocomplete } from "./js/fetch-autocomplete.js";
 const btn = document.querySelector(".weather_btn");
 const div = document.querySelector(".weather_div");
+const input = document.querySelector(".weather_input");
 
 // lattitude
 const lat = document.createElement("span");
@@ -16,12 +18,18 @@ temp.setAttribute("id", "temp");
 for (let i = 0; i < 40; i += 8) {
   const temperature = document.createElement("span");
   temperature.setAttribute("id", `temperature${i}`);
-  temp.appendChild(temperature);
-}
+  const humidity = document.createElement("span");
+  humidity.setAttribute("id", `humidity${i}`);
+  const clouds = document.createElement("span");
+  clouds.setAttribute("id", `clouds${i}`);
+  const description = document.createElement("span");
+  description.setAttribute("id", `description${i}`);
 
-// humidity
-const humidity = document.createElement("span");
-humidity.setAttribute("id", "humidity");
+  temp.appendChild(temperature);
+  temp.appendChild(humidity);
+  temp.appendChild(clouds);
+  temp.appendChild(description);
+}
 
 // photos
 const country_photo = document.createElement("img");
@@ -32,7 +40,12 @@ div.appendChild(country_photo);
 div.appendChild(temp);
 div.appendChild(lat);
 div.appendChild(lon);
-div.appendChild(humidity);
 
 // button that calls the function
 btn.addEventListener("click", async () => await fetch_weather());
+input.addEventListener("keypress", async function (event) {
+  if (event.keyCode == 13) {
+    await fetch_weather();
+  }
+});
+input.addEventListener("input", () => autocomplete());
