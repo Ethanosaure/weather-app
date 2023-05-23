@@ -16,6 +16,8 @@ lon.setAttribute("id", "lon");
 const temp = document.createElement("div");
 temp.setAttribute("id", "temp");
 for (let i = 0; i < 40; i += 8) {
+  const day = document.createElement("span");
+  day.setAttribute("id", `day${i}`);
   const temperature = document.createElement("span");
   temperature.setAttribute("id", `temperature${i}`);
   const humidity = document.createElement("span");
@@ -25,6 +27,7 @@ for (let i = 0; i < 40; i += 8) {
   const description = document.createElement("span");
   description.setAttribute("id", `description${i}`);
 
+  temp.appendChild(day);
   temp.appendChild(temperature);
   temp.appendChild(humidity);
   temp.appendChild(clouds);

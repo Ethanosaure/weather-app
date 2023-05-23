@@ -24,8 +24,7 @@ export async function fetch_weather() {
     });
   for (let i = 0; i < 40; i += 8) {
     // weather content
-    const day = document.createElement("span");
-    day.setAttribute("id", `day${i}`);
+    const day = document.querySelector(`#day${i}`);
     day.textContent = `${days[y - i]} `;
     const clouds = document.querySelector(`#clouds${i}`);
     clouds.textContent = `weather: ${weather.list[i].weather[0].main} `;
