@@ -3,6 +3,9 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .autocomplete {
   display: flex;
@@ -20,7 +23,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px;
+  margin-top: 20px;
 }
 span {
   font-family: "Times New Roman", Times, serif;
@@ -29,6 +32,9 @@ span {
 #temp {
   display: flex;
   flex-direction: column;
+  background-color: lightgray;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 .content_div {
   margin: 10px;

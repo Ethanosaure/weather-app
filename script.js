@@ -1,5 +1,6 @@
 import { fetch_weather } from "./js/fetch-temp.js";
 import { autocomplete } from "./js/fetch-autocomplete.js";
+import { background } from "./js/background-function.js";
 const btn = document.querySelector(".weather_btn");
 const div = document.querySelector(".weather_div");
 const input = document.querySelector(".weather_input");
@@ -60,9 +61,11 @@ div.appendChild(lon);
 
 // button that calls the function
 btn.addEventListener("click", async () => await fetch_weather());
+btn.addEventListener("click", () => background());
 input.addEventListener("keypress", async function (event) {
   if (event.keyCode == 13) {
     await fetch_weather();
+    background();
   }
 });
 input.addEventListener("input", () => autocomplete());

@@ -36,6 +36,18 @@ export async function fetch_weather() {
     description.textContent = `description: ${weather.list[i].weather[0].description} `;
     const div = document.querySelector(`#div${i}`);
 
+    console.log(weather.list[0].weather[0].main);
+
+    if (weather.list[0].weather[0].main === "Clouds") {
+      document.body.style.backgroundImage = `url(assets/nuages-139.jpg)`;
+      console.log(weather.list[0].weather[0].main);
+    }
+    if (weather.list[0].weather[0].main === "Rain") {
+      document.body.style.backgroundImage = `url(assets/cloud-rain-raining-sad-wallpaper-preview.jpg)`;
+    }
+    if (weather.list[0].weather[0].main === "Clear") {
+      document.body.style.backgroundImage = "url(assets/soleil.jpg)";
+    }
     // append
     div.appendChild(day);
     div.appendChild(humidity);
