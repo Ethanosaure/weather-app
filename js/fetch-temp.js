@@ -2,12 +2,18 @@ import { fetch_photo } from "./fetch-photo.js";
 import { fetch_lat_lon } from "./fetch-lat-lon.js";
 import { create_chart } from "./create-chart.js";
 export async function fetch_weather() {
+  const input = document.querySelector(".weather_input");
+
+  if (!input.value) {
+    alert("nowhere to check");
+    throw "input is empty";
+  }
   await fetch_lat_lon();
 
   const lat = document.querySelector("#lat").value;
   const lon = document.querySelector("#lon").value;
   const temp = document.querySelector("#temp");
-  const input = document.querySelector(".weather_input");
+  temp.style.visibility = "visible";
 
   const days = [
     "today: ",

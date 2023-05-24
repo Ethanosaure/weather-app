@@ -6,6 +6,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #5585b5;
 }
 .autocomplete {
   display: flex;
@@ -32,7 +33,7 @@ span {
 #temp {
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
+  background-color: lightblue;
   border-radius: 10px;
   border: 1px solid black;
   margin-top: 20px;
@@ -55,4 +56,9 @@ span {
 #chart_div {
   background-color: lightgray;
   min-width: 360px;
+}
+header {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: lightblue;
 }
