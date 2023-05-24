@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #5585b5;
+}
+.autocomplete {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+#country_photo {
+  height: 375px;
+  width: 375px;
+  border-radius: 50%;
+}
+.weather_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+span {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+}
+#temp {
+  display: flex;
+  flex-direction: column;
+  background-color: lightblue;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+.content_div {
+  margin: 10px;
+}
+.day,
+.temperature,
+.humidity,
+.clouds,
+.description {
+  margin-right: 10px;
+}
+.city {
+  align-self: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+}
+#chart_div {
+  background-color: lightgray;
+  min-width: 360px;
+}
+header {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: lightblue;
+}
