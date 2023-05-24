@@ -1,6 +1,10 @@
 export async function fetch_lat_lon() {
   const input = document.querySelector(".weather_input").value;
   const div = document.querySelector(".weather_div");
+  if (!input) {
+    alert("nowhere to check");
+    return;
+  }
   await fetch(
     `https://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=5&appid=9225cc9b037b83b808d5b41d51dc7fe5`
   )
