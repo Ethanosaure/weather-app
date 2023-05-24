@@ -17,7 +17,6 @@ export function autocomplete() {
       div.innerHTML = "";
       const suggestions = document.createElement("select");
       suggestions.setAttribute("id", "select");
-      console.log(data);
       div.appendChild(suggestions);
       data.forEach((element) => {
         let suggestion = document.createElement("option");

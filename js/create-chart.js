@@ -7,9 +7,7 @@ export function create_chart(weather) {
   for (let i = 0; i < 40; i += 8) {
     let temperature = weather.list[i].main.temp;
     data_array.push(temperature);
-    console.log(temperature);
   }
-  console.log(ctx);
   new Chart(ctx, {
     type: "line",
     data: {
