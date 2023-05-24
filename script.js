@@ -69,6 +69,7 @@ input.addEventListener("keypress", async function (event) {
   if (event.keyCode == 13) {
     await fetch_weather();
     background();
+    create_chart();
     city.innerText = input.value;
   }
 });

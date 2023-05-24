@@ -1,5 +1,6 @@
 import { fetch_photo } from "./fetch-photo.js";
 import { fetch_lat_lon } from "./fetch-lat-lon.js";
+import { create_chart } from "./create-chart.js";
 export async function fetch_weather() {
   await fetch_lat_lon();
 
@@ -33,7 +34,7 @@ export async function fetch_weather() {
     clouds.textContent = `weather: ${weather.list[i].weather[0].main} `;
     const temperature = document.querySelector(`#temperature${i}`);
     const humidity = document.querySelector(`#humidity${i}`);
-    temperature.textContent = `temperature: ${weather.list[i].main.temp}°C `;
+    temperature.textContent = `temperature: ${weather.list[i].main.temp}°C`;
     humidity.textContent = `humidity: ${weather.list[i].main.humidity}% `;
     const description = document.querySelector(`#description${i}`);
     description.textContent = `description: ${weather.list[i].weather[0].description} `;
@@ -63,6 +64,7 @@ export async function fetch_weather() {
   }
 
   fetch_photo();
+  create_chart(weather);
   const city = document.querySelector(".city");
   city.innerHTML = input.value;
 }
