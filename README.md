@@ -14,6 +14,10 @@ web page that gives informations about the weather for the next 5 days!
 -For the autocomplete: https://api-ninjas.com/  
 -For the localisation: https://openweathermap.org/  
 
+## Webpage
+
+https://ethanosaure.github.io/weather-app/ (i'm pretty bad in CSS)
+
 
 ## 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
