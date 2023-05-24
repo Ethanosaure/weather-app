@@ -6,7 +6,7 @@ export function autocomplete() {
   }
   let options = {
     method: "GET",
-    headers: { "x-api-key": "K2HD9WqSrlqaFu59wE5zvg==CvClWygwWZIPAxvb" },
+    headers: { "x-api-key": "yPx9Z98en0nZ31g7ubdUS0oZ1AlI0qLTPb39wzmr" },
   };
 
   let url = `https://api.api-ninjas.com/v1/city?limit=10&name=${input.value}`;
@@ -17,6 +17,7 @@ export function autocomplete() {
       div.innerHTML = "";
       const suggestions = document.createElement("select");
       suggestions.setAttribute("id", "select");
+      console.log(data);
       div.appendChild(suggestions);
       data.forEach((element) => {
         let suggestion = document.createElement("option");
