@@ -7,6 +7,9 @@ export async function fetch_photo() {
     .then((res) => res.json())
     .then((json) => {
       const img = document.querySelector("#country_photo");
+      if (!json.results[0]) {
+        return;
+      }
       img.src = json.results[0].urls.regular;
     })
     .catch((error) => {
