@@ -28,6 +28,9 @@ export async function fetch_weather() {
     });
   for (let i = 0; i < 40; i += 8) {
     // weather content
+    if (weather.list === undefined) {
+      return;
+    }
     const day = document.querySelector(`#day${i}`);
     day.textContent = `${days[y - i]} `;
     const clouds = document.querySelector(`#clouds${i}`);
