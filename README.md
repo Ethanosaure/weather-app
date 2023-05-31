@@ -16,7 +16,7 @@ web page that gives informations about the weather for the next 5 days!
 
 ## Webpage
 
-https://ethanosaure.github.io/weather-app/ (i'm pretty bad in CSS)
+https://ethanosaure.github.io/weather-app/ (don't look at the design please)
 
 
 ## 🔗 Links
